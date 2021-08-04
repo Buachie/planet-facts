@@ -15,11 +15,26 @@ interface Planet {
 }
 
 const DisplayPlanets = (props: Planet) => {
-  const [overview, toggleOverview] = useState<Boolean>(false);
+  const [overview, toggleOverview] = useState<Boolean>(true);
   const [internal, toggleInternal] = useState<Boolean>(false);
-  const [geology, toggleGeology] = useState<Boolean>(true);
+  const [geology, toggleGeology] = useState<Boolean>(false);
 
-  const handleToggle = () => {};
+  const activateOverview = () => {
+    toggleOverview(true);
+    toggleInternal(false);
+    toggleGeology(false);
+  };
+  const activateInternal = () => {
+    toggleOverview(false);
+    toggleInternal(true);
+    toggleGeology(false);
+  };
+  const activateGeology = () => {
+    toggleOverview(false);
+    toggleInternal(false);
+    toggleGeology(true);
+  };
+
   return (
     <div className="planet">
       <div className="planet-data">
@@ -27,12 +42,13 @@ const DisplayPlanets = (props: Planet) => {
           <img
             className="planet-image"
             src={
-              internal == true
+              internal === true
                 ? process.env.PUBLIC_URL + props.data.images.internal
                 : process.env.PUBLIC_URL + props.data.images.planet
             }
+            alt="planet"
           />
-          {geology == true ? (
+          {geology === true ? (
             <img
               className="planet-geology"
               src={process.env.PUBLIC_URL + props.data.images.geology}
@@ -44,9 +60,9 @@ const DisplayPlanets = (props: Planet) => {
         <div className="planet-info">
           <h1 className="planet-name">{props.data.name}</h1>
           <p className="planet-overview">
-            {overview == true
+            {overview === true
               ? props.data.overview.content
-              : internal == true
+              : internal === true
               ? props.data.structure.content
               : props.data.geology.content}
           </p>
@@ -54,9 +70,9 @@ const DisplayPlanets = (props: Planet) => {
             Source:{" "}
             <a
               href={
-                overview == true
+                overview === true
                   ? props.data.overview.source
-                  : internal == true
+                  : internal === true
                   ? props.data.structure.source
                   : props.data.geology.source
               }
@@ -64,13 +80,13 @@ const DisplayPlanets = (props: Planet) => {
               Wikipedia
             </a>
           </p>
-          <div className="button">
+          <div className="button" onClick={activateOverview}>
             01 <span>Overview</span>
           </div>
-          <div className="button">
+          <div className="button" onClick={activateInternal}>
             02 <span>Internal Structure</span>
           </div>
-          <div className="button">
+          <div className="button" onClick={activateGeology}>
             03 <span>Surface Geology</span>
           </div>
         </div>
