@@ -1,0 +1,54 @@
+@import url("https://fonts.googleapis.com/css2?family=Antonio&display=swap");
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+}
+
+html body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #070724;
+}
+
+.nav-bar {
+  width: 100%;
+  border-bottom: 1px solid #38384f;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  font-family: Antonio;
+  color: #fff;
+  padding: 1em;
+}
+
+.nav-bar .nav-title {
+  margin: 0;
+}
+
+.nav-bar .nav-menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 1em;
+}
+
+.nav-bar .nav-menu a {
+  text-decoration: none;
+  color: #fff;
+}
+/*# sourceMappingURL=main.css.map */
