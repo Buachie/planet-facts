@@ -11,7 +11,8 @@ html {
     padding: 0;
     height: 100%;
     width: 100%;
-    background-color: #070724;
+    //background-color: #070724;
+    background: #070724 url("./images/stars.png");
     font-family: Spartan;
     font-size: 14px;
     color: #fff;
@@ -54,6 +55,9 @@ h3 {
   color: #fff;
   padding: 1em;
 
+  .menu-icon {
+    display: none;
+  }
   .nav-title {
     margin: 0;
   }
@@ -153,7 +157,7 @@ h3 {
   }
 }
 
-@media (max-width: 1000px) {
+@media screen and (max-width: 1000px) {
   .nav-bar {
     flex-direction: column;
     gap: 0.5em;
@@ -164,6 +168,11 @@ h3 {
     .planet-data {
       flex-direction: column !important;
 
+      .img-container {
+        img {
+          width: 100%;
+        }
+      }
       .planet-info {
         width: 100%;
         flex-direction: row;
@@ -181,7 +190,35 @@ h3 {
   }
 }
 
-@media (max-width: 400px) {
+@media screen and (max-width: 600px) {
+  .nav-bar {
+    position: relative;
+    flex-direction: row;
+    justify-content: space-between;
+    .nav-menu {
+      flex-direction: column;
+      width: 100%;
+      height: 500px;
+      position: absolute;
+      top: 80px;
+      left: -100%;
+      opacity: 1;
+      transition: all 0.5s ease;
+    }
+    .active {
+      background: #070724;
+      left: 0;
+      opacity: 1;
+      transition: all 0.5s ease;
+      z-index: 1;
+    }
+    .menu-icon {
+      display: block;
+    }
+  }
+}
+
+@media screen and (max-width: 400px) {
   .planet {
     .planet-data {
       .img-container {

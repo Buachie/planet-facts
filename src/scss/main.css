@@ -13,7 +13,7 @@ html body {
   padding: 0;
   height: 100%;
   width: 100%;
-  background-color: #070724;
+  background: #070724 url("./images/stars.png");
   font-family: Spartan;
   font-size: 14px;
   color: #fff;
@@ -61,6 +61,10 @@ h3 {
           justify-content: space-between;
   color: #fff;
   padding: 1em;
+}
+
+.nav-bar .menu-icon {
+  display: none;
 }
 
 .nav-bar .nav-title {
@@ -212,7 +216,7 @@ h3 {
   color: #838391;
 }
 
-@media (max-width: 1000px) {
+@media screen and (max-width: 1000px) {
   .nav-bar {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -226,6 +230,9 @@ h3 {
     -webkit-box-direction: normal !important;
         -ms-flex-direction: column !important;
             flex-direction: column !important;
+  }
+  .planet .planet-data .img-container img {
+    width: 100%;
   }
   .planet .planet-data .planet-info {
     width: 100%;
@@ -251,7 +258,45 @@ h3 {
   }
 }
 
-@media (max-width: 400px) {
+@media screen and (max-width: 600px) {
+  .nav-bar {
+    position: relative;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .nav-bar .nav-menu {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    width: 100%;
+    height: 500px;
+    position: absolute;
+    top: 80px;
+    left: -100%;
+    opacity: 1;
+    -webkit-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+  }
+  .nav-bar .active {
+    background: #070724;
+    left: 0;
+    opacity: 1;
+    -webkit-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+    z-index: 1;
+  }
+  .nav-bar .menu-icon {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 400px) {
   .planet .planet-data .img-container img {
     width: 100%;
   }
