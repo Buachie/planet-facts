@@ -5,6 +5,7 @@ import "./scss/main.css";
 import Navbar from "./components/Navbar";
 import DisplayPlanets from "./components/DisplayPlanets";
 
+//Import planet data from json file
 const data = require("./data/data.json");
 
 const App = () => {

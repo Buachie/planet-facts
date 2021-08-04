@@ -15,6 +15,7 @@ interface Planet {
 }
 
 const DisplayPlanets = (props: Planet) => {
+  //Overview will appear by default
   const [overview, toggleOverview] = useState<Boolean>(true);
   const [internal, toggleInternal] = useState<Boolean>(false);
   const [geology, toggleGeology] = useState<Boolean>(false);
@@ -58,36 +59,43 @@ const DisplayPlanets = (props: Planet) => {
         </div>
 
         <div className="planet-info">
-          <h1 className="planet-name">{props.data.name}</h1>
-          <p className="planet-overview">
-            {overview === true
-              ? props.data.overview.content
-              : internal === true
-              ? props.data.structure.content
-              : props.data.geology.content}
-          </p>
-          <p className="source">
-            Source:{" "}
-            <a
-              href={
-                overview === true
-                  ? props.data.overview.source
-                  : internal === true
-                  ? props.data.structure.source
-                  : props.data.geology.source
-              }
-            >
-              Wikipedia
-            </a>
-          </p>
-          <div className="button" onClick={activateOverview}>
-            01 <span>Overview</span>
+          <div className="info-container">
+            <h1 className="planet-name">{props.data.name}</h1>
+            <p className="planet-overview">
+              {overview === true
+                ? props.data.overview.content
+                : internal === true
+                ? props.data.structure.content
+                : props.data.geology.content}
+            </p>
+            <p className="source">
+              Source:{" "}
+              <a
+                href={
+                  overview === true
+                    ? props.data.overview.source
+                    : internal === true
+                    ? props.data.structure.source
+                    : props.data.geology.source
+                }
+              >
+                Wikipedia
+              </a>
+            </p>
           </div>
-          <div className="button" onClick={activateInternal}>
-            02 <span>Internal Structure</span>
-          </div>
-          <div className="button" onClick={activateGeology}>
-            03 <span>Surface Geology</span>
+          <div className="button-container">
+            <div className="button" onClick={activateOverview}>
+              <p>01</p>
+              <p>Overview</p>
+            </div>
+            <div className="button" onClick={activateInternal}>
+              <p>02</p>
+              <p>Internal Structure</p>
+            </div>
+            <div className="button" onClick={activateGeology}>
+              <p>03</p>
+              <p>Surface Geology</p>
+            </div>
           </div>
         </div>
       </div>
@@ -106,7 +114,7 @@ const DisplayPlanets = (props: Planet) => {
         </div>
         <div className="stat-window">
           <p>AVERAGE TEMP.</p>
-          <h2>{props.data.radius}</h2>
+          <h2>{props.data.temperature}</h2>
         </div>
       </div>
     </div>

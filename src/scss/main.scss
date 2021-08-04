@@ -13,7 +13,7 @@ html {
     width: 100%;
     background-color: #070724;
     font-family: Spartan;
-    font-size: 20px;
+    font-size: 14px;
     color: #fff;
   }
 }
@@ -62,6 +62,7 @@ h3 {
     align-items: center;
     gap: 1em;
     font-family: Spartan;
+    text-transform: uppercase;
 
     a {
       text-decoration: none;
@@ -109,18 +110,26 @@ h3 {
       .planet-overview {
         line-height: 1.5em;
       }
-
-      .button {
-        border: 1px solid #38384f;
-        padding: 1em;
-        margin: 0.5em 0;
-        &:hover {
-          background-color: #38384f;
-          cursor: pointer;
-        }
-        span {
-          font-weight: bold;
-          margin-left: 1em;
+      .button-container {
+        display: flex;
+        flex-direction: column;
+        // align-items: center;
+        .button {
+          width: 100%;
+          border: 1px solid #38384f;
+          padding: 0.5em;
+          margin: 0.5em 0;
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          gap: 1em;
+          &:hover {
+            background-color: #38384f;
+            cursor: pointer;
+          }
+          p {
+            font-weight: bold;
+          }
         }
       }
     }
@@ -136,10 +145,68 @@ h3 {
 
   .stat-window {
     border: 1px solid #38384f;
-    padding: 1em 7em 1em 1em;
+    padding: 0 3em 0 1em;
     p {
       font-size: 12px;
       color: #838391;
+    }
+  }
+}
+
+@media (max-width: 1000px) {
+  .nav-bar {
+    flex-direction: column;
+    gap: 0.5em;
+    margin-bottom: 1em;
+  }
+
+  .planet {
+    .planet-data {
+      flex-direction: column !important;
+
+      .planet-info {
+        width: 100%;
+        flex-direction: row;
+        justify-content: space-between;
+        .info-container {
+          width: 50%;
+        }
+        .button-container {
+          width: 40%;
+          align-items: flex-end;
+          justify-content: flex-end;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 400px) {
+  .planet {
+    .planet-data {
+      .img-container {
+        img {
+          width: 100%;
+        }
+      }
+      .planet-info {
+        width: 100%;
+        flex-direction: column;
+        .info-container {
+          width: 100%;
+          .planet-name,
+          .planet-overview {
+            text-align: center;
+          }
+        }
+      }
+    }
+  }
+
+  .planet-stats {
+    flex-direction: column;
+    .stat-window {
+      width: 100%;
     }
   }
 }
