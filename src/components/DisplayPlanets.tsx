@@ -10,6 +10,7 @@ interface Planet {
     revolution: string;
     radius: string;
     temperature: string;
+    color: string;
     images: { planet: string; internal: string; geology: string };
   };
 }
@@ -37,7 +38,8 @@ const DisplayPlanets = (props: Planet) => {
   };
 
   return (
-    <div className="planet">
+    <div className={`planet ${props.data.name}`}>
+      <div className="button-container-mobile"></div>
       <div className="planet-data">
         <div className="img-container">
           <img
@@ -84,15 +86,33 @@ const DisplayPlanets = (props: Planet) => {
             </p>
           </div>
           <div className="button-container">
-            <div className="button" onClick={activateOverview}>
+            <div
+              className={`button ${overview ? "active" : null}`}
+              style={{
+                backgroundColor: overview ? props.data.color : "transparent",
+              }}
+              onClick={activateOverview}
+            >
               <p>01</p>
               <p>Overview</p>
             </div>
-            <div className="button" onClick={activateInternal}>
+            <div
+              className={`button ${internal ? "active" : null}`}
+              style={{
+                backgroundColor: internal ? props.data.color : "transparent",
+              }}
+              onClick={activateInternal}
+            >
               <p>02</p>
               <p>Internal Structure</p>
             </div>
-            <div className="button" onClick={activateGeology}>
+            <div
+              className={`button ${geology ? "active" : null}`}
+              style={{
+                backgroundColor: geology ? props.data.color : "transparent",
+              }}
+              onClick={activateGeology}
+            >
               <p>03</p>
               <p>Surface Geology</p>
             </div>

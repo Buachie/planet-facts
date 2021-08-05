@@ -4,6 +4,7 @@ import "./scss/main.css";
 //Components
 import Navbar from "./components/Navbar";
 import DisplayPlanets from "./components/DisplayPlanets";
+import Footer from "./components/Footer";
 
 //Import planet data from json file
 const data = require("./data/data.json");
@@ -36,6 +37,7 @@ const App = () => {
       <Route exact path="/neptune">
         <DisplayPlanets data={data[7]} />
       </Route>
+      <Footer />
     </Router>
   );
 };
