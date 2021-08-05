@@ -39,7 +39,40 @@ const DisplayPlanets = (props: Planet) => {
 
   return (
     <div className={`planet ${props.data.name}`}>
-      <div className="button-container-mobile"></div>
+      <div className="button-container-mobile">
+        <div
+          className={`button ${overview ? "active" : null}`}
+          style={{
+            borderBottom: overview ? "2px solid " + props.data.color : "none",
+          }}
+          onClick={activateOverview}
+        >
+          <p>Overview</p>
+        </div>
+
+        <div
+          className={`button ${internal ? "active" : null}`}
+          style={{
+            borderBottom: internal
+              ? "2px solid " + props.data.color
+              : "transparent",
+          }}
+          onClick={activateInternal}
+        >
+          <p>Internal Structure</p>
+        </div>
+        <div
+          className={`button ${geology ? "active" : null}`}
+          style={{
+            borderBottom: geology
+              ? "2px solid " + props.data.color
+              : "transparent",
+          }}
+          onClick={activateGeology}
+        >
+          <p>Surface</p>
+        </div>
+      </div>
       <div className="planet-data">
         <div className="img-container">
           <img
@@ -81,7 +114,7 @@ const DisplayPlanets = (props: Planet) => {
                     : props.data.geology.source
                 }
               >
-                Wikipedia
+                Wikipedia <i className="fas fa-external-link-alt"></i>
               </a>
             </p>
           </div>

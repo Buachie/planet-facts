@@ -142,7 +142,7 @@
     "revolution": "29.46 Years",
     "radius": "58,232 KM",
     "temperature": "-138°c",
-    "color": "CD5120",
+    "color": "#CD5120",
     "images": {
       "planet": "./assets/planet-saturn.svg",
       "internal": "./assets/planet-saturn-internal.svg",
