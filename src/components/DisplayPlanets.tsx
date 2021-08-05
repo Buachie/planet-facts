@@ -38,12 +38,12 @@ const DisplayPlanets = (props: Planet) => {
   };
 
   return (
-    <div className={`planet ${props.data.name}`}>
+    <div className={`planet ${props.data.name}`} role="main">
       <div className="button-container-mobile">
         <div
           className={`button ${overview ? "active" : null}`}
           style={{
-            borderBottom: overview ? "2px solid " + props.data.color : "none",
+            borderBottom: overview ? "3px solid " + props.data.color : "none",
           }}
           onClick={activateOverview}
         >
@@ -54,18 +54,18 @@ const DisplayPlanets = (props: Planet) => {
           className={`button ${internal ? "active" : null}`}
           style={{
             borderBottom: internal
-              ? "2px solid " + props.data.color
+              ? "3px solid " + props.data.color
               : "transparent",
           }}
           onClick={activateInternal}
         >
-          <p>Internal Structure</p>
+          <p>Structure</p>
         </div>
         <div
           className={`button ${geology ? "active" : null}`}
           style={{
             borderBottom: geology
-              ? "2px solid " + props.data.color
+              ? "3px solid " + props.data.color
               : "transparent",
           }}
           onClick={activateGeology}

@@ -1,11 +1,8 @@
 const Footer = () => {
   return (
-    <footer className="footer">
+    <footer className="footer" role="contentinfo">
       <div className="footer-content">
-        <p>
-          <span dangerouslySetInnerHTML={{ __html: "&copy;" }} /> Aaron Buachie
-          2021
-        </p>
+        <p>Aaron Buachie 2021</p>
         <a href="https://abuachie.com">abuachie.com</a>
       </div>
     </footer>

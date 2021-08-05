@@ -93,6 +93,10 @@ h3 {
   color: #fff;
 }
 
+.nav-bar .nav-content .nav-menu a .nav-indicator {
+  display: none;
+}
+
 footer {
   width: 100%;
   border-top: 1px solid #38384f;
@@ -113,6 +117,15 @@ footer .footer-content {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+}
+
+footer .footer-content a {
+  text-decoration: none;
+  color: #838391;
+}
+
+footer .footer-content a:hover {
+  color: #fff;
 }
 
 .planet {
@@ -258,8 +271,9 @@ footer .footer-content {
 }
 
 .planet-stats .stat-window {
+  width: 23%;
   border: 1px solid #38384f;
-  padding: 0 3em 0 1em;
+  padding: 1em 3em 1em 1em;
 }
 
 .planet-stats .stat-window h2 {
@@ -337,6 +351,25 @@ footer .footer-content {
     opacity: 1;
     -webkit-transition: all 0.5s ease;
     transition: all 0.5s ease;
+    overflow: scroll;
+  }
+  .nav-content .nav-menu a {
+    width: 100%;
+    padding: 1em;
+    border-bottom: 1px solid #38384f;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    gap: 1em;
+  }
+  .nav-content .nav-menu a .nav-indicator {
+    display: block !important;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
   }
   .nav-content .active {
     background: #070724;
@@ -397,6 +430,8 @@ footer .footer-content {
   }
   .planet .button-container-mobile {
     border-bottom: 1px solid #38384f;
+    text-transform: uppercase;
+    font-size: 14px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -410,8 +445,6 @@ footer .footer-content {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    -webkit-transition: all 0.5s ease;
-    transition: all 0.5s ease;
   }
 }
 /*# sourceMappingURL=main.css.map */

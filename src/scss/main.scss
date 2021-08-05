@@ -74,6 +74,9 @@ h3 {
       a {
         text-decoration: none;
         color: #fff;
+        .nav-indicator {
+          display: none;
+        }
       }
     }
   }
@@ -91,6 +94,13 @@ footer {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    a {
+      text-decoration: none;
+      color: #838391;
+      &:hover {
+        color: #fff;
+      }
+    }
   }
 }
 
@@ -177,6 +187,7 @@ footer {
   }
 }
 
+//Stat windows at bottom of page
 .planet-stats {
   margin-top: 3em;
   width: 100%;
@@ -185,8 +196,9 @@ footer {
   justify-content: space-between;
 
   .stat-window {
+    width: 23%;
     border: 1px solid #38384f;
-    padding: 0 3em 0 1em;
+    padding: 1em 3em 1em 1em;
     h2 {
       margin: 0;
     }
@@ -247,6 +259,21 @@ footer {
       left: -100%;
       opacity: 1;
       transition: all 0.5s ease;
+      overflow: scroll;
+      a {
+        width: 100%;
+        padding: 1em;
+        border-bottom: 1px solid #38384f;
+        display: flex;
+        align-items: center;
+        gap: 1em;
+        .nav-indicator {
+          display: block !important;
+          width: 20px;
+          height: 20px;
+          border-radius: 50%;
+        }
+      }
     }
     .active {
       background: #070724;
@@ -304,11 +331,12 @@ footer {
     }
     .button-container-mobile {
       border-bottom: 1px solid #38384f;
+      text-transform: uppercase;
+      font-size: 14px;
       display: flex;
       flex-direction: row;
       justify-content: space-between;
       align-items: center;
-      transition: all 0.5s ease;
     }
   }
 }
