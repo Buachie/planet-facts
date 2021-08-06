@@ -16,6 +16,16 @@ const Navbar = () => {
           ></i>
         </div>
         <div className={open ? "nav-menu active" : "nav-menu"}>
+          <div className="mobile-nav">
+            <h2 className="nav-title">The Planets</h2>
+            <div className="menu-icon">
+              <i
+                className={open ? "fas fa-times fa-2x" : "fas fa-bars fa-2x"}
+                onClick={() => setOpen(!open)}
+              ></i>
+            </div>
+          </div>
+
           <Link to="/" onClick={() => setOpen(false)}>
             <div
               className="nav-indicator"
