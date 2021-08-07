@@ -118,8 +118,8 @@ const DisplayPlanets = (props: Planet) => {
               </a>
             </p>
           </div>
-          <div className="button-container">
-            <div
+          <div className="button-container" role="navigation">
+            <button
               className={`button ${overview ? "active" : null}`}
               style={{
                 backgroundColor: overview ? props.data.color : "transparent",
@@ -128,8 +128,8 @@ const DisplayPlanets = (props: Planet) => {
             >
               <p>01</p>
               <p>Overview</p>
-            </div>
-            <div
+            </button>
+            <button
               className={`button ${internal ? "active" : null}`}
               style={{
                 backgroundColor: internal ? props.data.color : "transparent",
@@ -138,8 +138,8 @@ const DisplayPlanets = (props: Planet) => {
             >
               <p>02</p>
               <p>Internal Structure</p>
-            </div>
-            <div
+            </button>
+            <button
               className={`button ${geology ? "active" : null}`}
               style={{
                 backgroundColor: geology ? props.data.color : "transparent",
@@ -148,7 +148,7 @@ const DisplayPlanets = (props: Planet) => {
             >
               <p>03</p>
               <p>Surface Geology</p>
-            </div>
+            </button>
           </div>
         </div>
       </div>
