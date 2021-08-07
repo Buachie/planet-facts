@@ -19,6 +19,8 @@ This project is created with:
 
 This react application provides a general overview, structural, and geological information about the planets in our solar system as well as links to Wikipedia entries on each one. All of the data is stored in a data.json file and is displayed in the DisplayPlanets component.
 
+The site is also fully accessible by keyboard in case the user is physically impaired or does not have access to a mouse
+
 ## Available Scripts
 
 In the project directory, you can run:
